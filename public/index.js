@@ -86,6 +86,8 @@ function buttonClickHandle(e) {
                     setTimeout(() => {
                         alert('在启动的路上了，等一分钟就行了')
                     }, 1000)
+                }else if(state === 'update'){
+                    alert('已更新')
                 }
                 
             }

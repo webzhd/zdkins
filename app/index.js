@@ -41,22 +41,14 @@ router.post('/command', async (ctx) => {
     const {state, index}  = ctx.request.body
     if(state === 'start'){
         start(list[index])
+    } else if(state === 'update') {
+        await update(list[index])
     } else {
         end(list[index])
     }
     ctx.body = '1'
 })
 
-router.post('/update', async (ctx) => {
-    const {index}  = ctx.request.body
-    try {
-        await update(list[index])
-        ctx.body = 1
-    }catch(e) {
-        ctx.body = 0
-    }
-    
-})
 
 module.exports = router
 
