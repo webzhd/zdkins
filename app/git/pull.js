@@ -1,9 +1,9 @@
 const nodegit = require('nodegit')
 
-module.exports = function() {
+module.exports = function(item) {
     return new Promise(resolve => {
         let repository = null
-        nodegit.Repository.open('E:/math/egg').then(Repository => {
+        nodegit.Repository.open(item.path).then(Repository => {
             repository = Repository
             return Repository.fetchAll()
         }).then(() => {

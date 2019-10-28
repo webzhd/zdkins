@@ -33,14 +33,14 @@ function renderTable(list) {
             return `<tr>
                 <td>${index}</td>
                 <td>${l.name}</td>
-                <td><a target="_blank" href="http://10.28.1.173:${l.port}">http://10.28.1.173:${l.port}</a></td>
+                <td><a target="_blank" href="http://10.28.1.171:${l.port}">http://10.28.1.171:${l.port}</a></td>
                 <td><span style="color: ${l.start ? '#5cb85c': '#d9534f'}">${l.start ? '已开启': '已关闭'}</span></td>
                 <td>
                     <button type="button" class="btn btn-success" ${l.start ? 'disabled': ''} id="start_${index}">启动</button>
 
                     <button type="button" class="btn btn-danger" ${!l.start ? 'disabled': ''} id="close_${index}">关闭</button>
                     
-                    <button type="button" class="btn btn-success" ${l.start ? 'disabled': ''} id="update_${index}">更新</button>
+                    <button type="button" class="btn btn-success" id="update_${index}">更新</button>
                 </td>
                 </tr>
             `
